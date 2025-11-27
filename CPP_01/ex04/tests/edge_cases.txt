@@ -1,0 +1,10 @@
+aaa
+aaaa
+aaaaa
+aaaaaa
+Test with overlapping: aaaa should become multiple replacements.
+Single character at start: a
+Single character at end: a
+Single character alone on line:
+a
+Back to normal text with aaa patterns.

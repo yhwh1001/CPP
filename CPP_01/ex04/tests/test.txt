@@ -1,0 +1,14 @@
+Hello World!
+This is a test file for testing the sed replacement program.
+Hello again, and welcome to Hello World.
+Multiple Hello occurrences should all be replaced.
+HelloHelloHello - consecutive ones too!
+What about Hello at the end: Hello
+And Hello in the middle of HelloWorld?
+HELLO should not be replaced (case sensitive).
+Empty lines below:
+
+The line above was empty.
+Special characters: Hello! Hello? Hello...
+Numbers: Hello123 and 456Hello789
+Last line with Hello.

@@ -1,0 +1,3 @@
+This file has no matches for xyz pattern.
+Just regular text here.
+Nothing special to replace.
