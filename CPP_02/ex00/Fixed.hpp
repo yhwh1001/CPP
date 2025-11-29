@@ -6,7 +6,7 @@
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:40:23 by mcarvalh          #+#    #+#             */
-/*   Updated: 2025/11/28 19:04:04 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2025/11/29 11:15:48 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 class Fixed {
    private:
-	int                 _fixedPointValue;
-	static const int    _fractionalBits = 8;
+	int					_fixedPointValue;
+	static const int	_fractionalBits = 8;
 
    public:
 	Fixed();
@@ -27,8 +27,8 @@ class Fixed {
 	Fixed& operator=(const Fixed& copy);
 	~Fixed();
 
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
 };
 
 

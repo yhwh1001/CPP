@@ -6,7 +6,7 @@
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:40:20 by mcarvalh          #+#    #+#             */
-/*   Updated: 2025/11/28 20:16:31 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2025/11/29 11:17:09 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::~Fixed() {
 
 Fixed::Fixed(const Fixed& copy) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixedPointValue = copy.getRawBits();
+	this->_fixedPointValue = copy.getRawBits() << this->_fractionalBits;
 }
 
 Fixed& Fixed::operator=(const Fixed& copy) {
