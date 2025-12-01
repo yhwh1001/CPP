@@ -6,7 +6,7 @@
 /*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 15:17:48 by manelcarval       #+#    #+#             */
-/*   Updated: 2025/12/01 01:46:46 by manelcarval      ###   ########.fr       */
+/*   Updated: 2025/12/01 02:43:30 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap " 
-			  << name 
-			  << ": Beebib boop see you all in hell" 
+	std::cout << "\nClapTrap " << name 
+			  << ": Beebib boop see you all in another lifetime" 
 			  << std::endl;
 }
 

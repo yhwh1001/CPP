@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/01 01:25:21 by manelcarval       #+#    #+#             */
-/*   Updated: 2025/12/01 02:01:48 by manelcarval      ###   ########.fr       */
+/*   Created: 2025/11/30 15:18:06 by manelcarval       #+#    #+#             */
+/*   Updated: 2025/11/30 19:03:39 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-#include "ClapTrap.hpp"
-#include <string>
 #include <iostream>
+#include <string>
 
-class FragTrap : public ClapTrap 
+class ClapTrap 
 {
-	public: 
-		FragTrap(const std::string n);
-		FragTrap(const FragTrap& copy);
-		FragTrap& operator=(const FragTrap& copy);
-		~FragTrap();
+	protected:
+		std::string 	name;
+		int				health;
+		int				energy;
+		int				damage;
 
-	void	highFivesGuys(void);
-
+	public:
+		ClapTrap();
+		ClapTrap(const std::string n);
+		ClapTrap(const ClapTrap& copy);
+		ClapTrap& operator=(const ClapTrap& copy);
+		~ClapTrap();
+		
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 };
 
 #endif

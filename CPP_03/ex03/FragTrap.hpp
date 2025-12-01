@@ -6,7 +6,7 @@
 /*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 01:25:21 by manelcarval       #+#    #+#             */
-/*   Updated: 2025/12/01 02:01:48 by manelcarval      ###   ########.fr       */
+/*   Updated: 2025/12/01 02:01:34 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <iostream>
 
-class FragTrap : public ClapTrap 
+class FragTrap : virtual public ClapTrap  // VIRTUAL = only one shared ClapTrap! 
 {
 	public: 
 		FragTrap(const std::string n);
