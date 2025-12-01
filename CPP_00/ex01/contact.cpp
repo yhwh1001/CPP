@@ -6,7 +6,7 @@
 /*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:18:13 by manelcarval       #+#    #+#             */
-/*   Updated: 2025/11/21 16:58:51 by manelcarval      ###   ########.fr       */
+/*   Updated: 2025/11/26 17:12:58 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ Contact::Contact(
 }
 
 void	Contact::show_Contact() const {
-	std::cout << "First Name: " << first_Name << std::endl;
+	std::cout << "First Name: " + first_Name << std::endl;
 	std::cout << "Last Name: " << last_Name << std::endl;
 	std::cout << "Nickname: " << nickName << std::endl;
 	std::cout << "Phone number: " << phone_Number << std::endl;
