@@ -6,15 +6,16 @@
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:26:28 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/20 17:59:15 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:21:03 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
-	os << bureaucrat.getGrade();
-	return (os);
+void	Bureaucrat::Increment() {
+	if (_grade <= 1)
+		throw GradeTooHighException();
+	_grade--;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name) {
@@ -40,6 +41,11 @@ const std::string	Bureaucrat::getName() const {
 
 int					Bureaucrat::getGrade() const {
 	return (this->_grade);
+}
+
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
+	os << bureaucrat.getGrade();
+	return (os);
 }
 
 Bureaucrat::Bureaucrat(): _name("light"), _grade(150) {
