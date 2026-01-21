@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:57:53 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/20 18:17:16 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/01/20 20:32:36 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <ostream>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -34,6 +35,7 @@ class Bureaucrat
 		int					getGrade() const;
 		void 				Increment();
 		void				Decrement();
+		std::string  		signForm(const Form& form);
 
 		class GradeTooHighException : std::exception {
 			public:

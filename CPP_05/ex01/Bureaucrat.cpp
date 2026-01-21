@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:26:28 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/20 18:21:03 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/01/20 20:22:29 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ void	Bureaucrat::Increment() {
 	if (_grade <= 1)
 		throw GradeTooHighException();
 	_grade--;
+}
+
+void	Bureaucrat::Decrement() {
+	if (_grade >= 150)
+		throw GradeTooHighException();
+	_grade++;
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name) {
