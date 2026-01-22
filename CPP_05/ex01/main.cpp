@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <iostream>
 
 void separator(std::string title)
@@ -50,6 +51,41 @@ int	main() {
 		Bureaucrat minion("Minion", 160);
 	}
 	catch (const Bureaucrat::GradeTooLowException& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	separator("FORM TESTS");
+
+	// Create a form that requires grade 50 to sign, grade 25 to execute
+	Form taxForm("Tax Declaration", 50, 25);
+	std::cout << taxForm << std::endl;
+
+	// Bob (grade 42) should be able to sign (42 <= 50)
+	bob.signForm(taxForm);
+	std::cout << taxForm << std::endl;
+
+	// Create a high-security form (requires grade 1)
+	Form secretForm("Top Secret", 1, 1);
+	std::cout << secretForm << std::endl;
+
+	// Zoe (grade 144) cannot sign (144 > 1)
+	zoe.signForm(secretForm);
+	std::cout << secretForm << std::endl;
+
+	separator("FORM EXCEPTIONS");
+
+	// Try to create invalid forms
+	try {
+		Form invalidForm("Invalid", 0, 50);  // grade too high
+	}
+	catch (const Form::GradeTooHighException& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	try {
+		Form invalidForm("Invalid", 50, 200);  // grade too low
+	}
+	catch (const Form::GradeTooLowException& e) {
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 }
