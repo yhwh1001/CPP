@@ -6,7 +6,7 @@
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 20:35:00 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/22 15:24:11 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/01/22 23:18:45 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ void Form::beSigned(const Bureaucrat& bureaucrat) {
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
-	return ("Form Grade is too low... dreaming may help(?)");
+	return ("Form Grade is too high... water may help(?)");
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-	return ("Form Grade is too high... water may help(?)");
+	return ("Form Grade is too low... dreaming may help(?)");
 }
 
 std::ostream& operator<<(std::ostream& os, const Form& form) {
