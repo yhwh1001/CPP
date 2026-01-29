@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:56:54 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/20 17:58:05 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:36:18 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ int	main() {
 		Bureaucrat roland("Rolling", 0);
 	}
 	catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	
 	try {
 		Bureaucrat maximus("maximus", -1);
 	}
 	catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	
 	try {
 		Bureaucrat minion("Minion", 160);
 	}
 	catch (const Bureaucrat::GradeTooLowException& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
 	separator("FORM TESTS");
@@ -79,13 +79,13 @@ int	main() {
 		Form invalidForm("Invalid", 0, 50);  // grade too high
 	}
 	catch (const Form::GradeTooHighException& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
 	try {
 		Form invalidForm("Invalid", 50, 200);  // grade too low
 	}
 	catch (const Form::GradeTooLowException& e) {
-		std::cout << "Error: " << e.what() << std::endl;
+		std::cerr << "Error: " << e.what() << std::endl;
 	}
 }

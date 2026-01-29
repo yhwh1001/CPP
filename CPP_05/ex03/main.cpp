@@ -6,16 +6,17 @@
 /*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:56:54 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/28 15:49:31 by manelcarval      ###   ########.fr       */
+/*   Updated: 2026/01/28 16:41:21 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-#include <iostream>
+#include "Intern.hpp"
 
 void separator(std::string title)
 {
@@ -25,6 +26,7 @@ void separator(std::string title)
 
 int	main() {
 	srand(time(NULL));
+
 	Bureaucrat bob("Bob", 42);
 	Bureaucrat zoe("Zoe", 147);
 	
@@ -36,36 +38,15 @@ int	main() {
 			  << ", a bureaucrat (crazy) with grade "
 			  << bob.getGrade()
 			  << std::endl;
-	separator("THE EXCEPTIONS");
-	try {
-		Bureaucrat roland("Rolling", 0);
-	}
-	catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
+	Intern	randomIntern;
 	
-	try {
-		Bureaucrat maximus("maximus", -1);
-	}
-	catch (const Bureaucrat::GradeTooHighException& e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
-	
-	try {
-		Bureaucrat minion("Minion", 160);
-	}
-	catch (const Bureaucrat::GradeTooLowException& e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
-
 	separator("SHRUBBERY TESTS");
-
-	// Create a form that requires grade 50 to sign, grade 25 to execute
-	ShrubberyCreationForm shrubbery("tree");
+	AForm*	shrubbery;
+	shrubbery = randomIntern.makeForm("shrubbery request", "Beeendeer");
 	std::cout << shrubbery << std::endl;
 
 	try {
-		shrubbery.execute(bob);
+		shrubbery->execute(bob);
 	}
 	catch (const AForm::FormNotSignedException& e) {
 		std::cerr << "Error: " << e.what() << std::endl; 
@@ -75,9 +56,8 @@ int	main() {
 	}
 	// Bob (grade 42) should be able to sign (42 <= 50)
 	try {
-		bob.signForm(shrubbery);
-		std::cout << shrubbery << std::endl;
-		shrubbery.execute(bob);
+		bob.signForm(*shrubbery);
+		shrubbery->execute(bob);
 	}
 	catch (const AForm::FormNotSignedException& e) {
 		std::cerr << "Error: " << e.what() << std::endl; 
@@ -87,16 +67,17 @@ int	main() {
 	}
 	// Zoe smaller grade
 	try {
-		shrubbery.execute(zoe);
+		shrubbery->execute(zoe);
 	}
 	catch (const ShrubberyCreationForm::ExecFormTooHigh& e) {
 		std::cerr << "Error : " << e.what() << std::endl;
 	}
 	// tryout new Form, exceptions
 	try {
-		ShrubberyCreationForm tryout("Zoe's try");
-		zoe.signForm(tryout);
-		tryout.execute(zoe);
+		AForm* tryout;
+		tryout = randomIntern.makeForm("shrubbery request", "Zoe's try");
+		zoe.signForm(*tryout);
+		tryout->execute(zoe);
 	}
 	catch (const AForm::GradeTooHighException& e) {
 		std::cerr << "Error: " << e.what() << std::endl; 
@@ -109,18 +90,18 @@ int	main() {
 	}
 
 	separator("ROBOTOMYYYY CRAZYYY");
-
-	RobotomyRequestForm zoro_robot("Zoro");
+	AForm* zoro_robot;
+	zoro_robot = randomIntern.makeForm("robotomy request", "Zoro");
 	std::cout << zoro_robot << std::endl;
 	try {
-		zoro_robot.execute(bob);
+		zoro_robot->execute(bob);
 	}
 	catch (const AForm::FormNotSignedException& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	try {
-		bob.signForm(zoro_robot);
-		zoro_robot.execute(bob);
+		bob.signForm(*zoro_robot);
+		zoro_robot->execute(bob);
 	}
 	catch (const AForm::FormNotSignedException& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
@@ -130,8 +111,8 @@ int	main() {
 	}
 	
 	try {
-		zoe.signForm(zoro_robot);
-		zoro_robot.execute(zoe);
+		zoe.signForm(*zoro_robot);
+		zoro_robot->execute(zoe);
 	}
 	catch (const AForm::FormNotSignedException& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
@@ -141,41 +122,46 @@ int	main() {
 	}
 	
 	separator("PRESIDENTIAL PARDON FOR WHO???");
-	
-	PresidentialPardonForm presi("DARK FORCES");
+	AForm* presi;
+	presi = randomIntern.makeForm("presidential pardon", "DARK FORCES");
 	Bureaucrat king("Three-Eyed King", 1);
 	std::cout << presi << std::endl;
 
 	try {
-		bob.signForm(presi);
-		presi.execute(king);
+		bob.signForm(*presi);
+		presi->execute(king);
 	}
 	catch (const AForm::FormNotSignedException& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 	try {
-		king.signForm(presi);
-		presi.execute(bob);
+		king.signForm(*presi);
+		presi->execute(bob);
 	}
 	catch(const PresidentialPardonForm::ExecFormTooHigh& e) {
 		std::cerr << e.what() << std::endl;
 	}
 	try {
-		presi.execute(king);
+		presi->execute(king);
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
 	}
 	try {
-		zoe.executeForm(presi);	
+		zoe.executeForm(*presi);	
 	}
 	catch (const PresidentialPardonForm::ExecFormTooHigh& e) {
 		std::cerr << e.what() << std::endl;
 	}
 	try {
-		king.executeForm(presi);
+		king.executeForm(*presi);
 	}
 	catch (const PresidentialPardonForm::ExecFormTooHigh& e) {
 		std::cerr << e.what() << std::endl;
 	}
+	
+
+	delete shrubbery;
+	delete zoro_robot;
+	delete presi;
 }
