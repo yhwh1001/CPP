@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 13:54:02 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/02/05 13:21:36 by mcarvalh         ###   ########.fr       */
+/*   Created: 2026/02/05 17:47:10 by mcarvalh          #+#    #+#             */
+/*   Updated: 2026/02/05 18:46:51 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef BASE_HPP
+#define BASE_HPP
 
-int main (int argc, char *argv[]) {
-	if (argc != 2) {
-		std::cerr << "Please enter (only) 1 argument for conversion :)" << std::endl;
-		return 1;
-	}
-	std::string str = argv[1];
-	ScalarConverter::convert(str);
-	return 0;
-}
+#include <iostream>
+
+class Base {
+	public:
+			// Base();
+			// Base(const Base& other);
+			// Base& operator=(const Base& other);
+			virtual ~Base();
+};
+
+
+
+#endif

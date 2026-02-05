@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/29 13:54:02 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/02/05 13:21:36 by mcarvalh         ###   ########.fr       */
+/*   Created: 2026/02/05 17:45:45 by mcarvalh          #+#    #+#             */
+/*   Updated: 2026/02/05 18:51:47 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef A_HPP
+#define A_HPP
 
-int main (int argc, char *argv[]) {
-	if (argc != 2) {
-		std::cerr << "Please enter (only) 1 argument for conversion :)" << std::endl;
-		return 1;
-	}
-	std::string str = argv[1];
-	ScalarConverter::convert(str);
-	return 0;
-}
+#include "Base.hpp"
+#include <iostream>
+
+class A : public Base {
+};
+
+#endif
