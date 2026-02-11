@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/10 17:30:04 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/02/11 14:44:15 by mcarvalh         ###   ########.fr       */
+/*   Created: 2026/02/11 14:49:20 by mcarvalh          #+#    #+#             */
+/*   Updated: 2026/02/11 15:51:42 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#include "iter.hpp"
 
-#include <iostream>
+int main() {
+	int intArr[] = {3, 6, 9};
+	iter(intArr, 3, print<int>);
 
-template <typename T>
-void	swap(T& a, T& b) {
-	T temp;
-	temp = a;
-	a = b;
-	b = temp;
-};
-
-template <typename T>
-T	min(T& a, T& b) {
-	if (a < b)
-		return a;
-	return b;
-};
-
-template <typename T>
-T	max(T& a, T& b) {
-	if (a > b)
-		return a;
-	return b;
+	std::string strArr[] = {"Creation", "Order", "Rebirth","Thank", "You"};
+	iter(strArr, 5, print<std::string>);
 }
-
-#endif
