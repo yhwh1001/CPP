@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
+/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:56:54 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/28 16:41:21 by manelcarval      ###   ########.fr       */
+/*   Updated: 2026/02/23 10:20:37 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main() {
 	separator("SHRUBBERY TESTS");
 	AForm*	shrubbery;
 	shrubbery = randomIntern.makeForm("shrubbery request", "Beeendeer");
-	std::cout << shrubbery << std::endl;
+	std::cout << *shrubbery << std::endl;
 
 	try {
 		shrubbery->execute(bob);
@@ -92,7 +92,7 @@ int	main() {
 	separator("ROBOTOMYYYY CRAZYYY");
 	AForm* zoro_robot;
 	zoro_robot = randomIntern.makeForm("robotomy request", "Zoro");
-	std::cout << zoro_robot << std::endl;
+	std::cout << *zoro_robot << std::endl;
 	try {
 		zoro_robot->execute(bob);
 	}
@@ -125,7 +125,7 @@ int	main() {
 	AForm* presi;
 	presi = randomIntern.makeForm("presidential pardon", "DARK FORCES");
 	Bureaucrat king("Three-Eyed King", 1);
-	std::cout << presi << std::endl;
+	std::cout << *presi << std::endl;
 
 	try {
 		bob.signForm(*presi);

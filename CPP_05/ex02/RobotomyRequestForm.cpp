@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
+/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:04:11 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/01/27 20:13:04 by manelcarval      ###   ########.fr       */
+/*   Updated: 2026/02/23 10:17:04 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
-#include <cstdlib>
-#include <ctime>
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) 
 : AForm("Robotomy Request", 72, 45), _target(target) {

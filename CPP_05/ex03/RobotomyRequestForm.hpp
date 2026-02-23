@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
+/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 23:04:14 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/01/27 19:48:40 by manelcarval      ###   ########.fr       */
+/*   Updated: 2026/02/23 10:17:27 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 #define ROBOTOMYREQUESTFORM_HPP
 #include "AForm.hpp"
-
+#include <cstdlib>
+#include <ctime>
 
 class RobotomyRequestForm : public AForm {
 	private:
