@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/23 17:50:46 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/02/26 14:40:26 by mcarvalh         ###   ########.fr       */
+/*   Created: 2026/02/26 14:56:15 by mcarvalh          #+#    #+#             */
+/*   Updated: 2026/02/26 14:56:33 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#include "Span.hpp"
 
-#include <iostream>
-#include <algorithm>
-
-template <typename T>
-typename T::iterator easyfind(T& container, int m) {
-	typename T::iterator it = std::find(container.begin(), container.end(), m);
-	if ( it == container.end())
-		throw std::runtime_error("No ocurrence found");
-	return it;
-};
-
-
-
-
-#endif
+int main() {
+	
+}

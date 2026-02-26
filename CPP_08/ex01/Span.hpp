@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/23 17:50:46 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/02/26 14:40:26 by mcarvalh         ###   ########.fr       */
+/*   Created: 2026/02/26 14:54:37 by mcarvalh          #+#    #+#             */
+/*   Updated: 2026/02/26 14:54:37 by mcarvalh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 #include <iostream>
-#include <algorithm>
 
-template <typename T>
-typename T::iterator easyfind(T& container, int m) {
-	typename T::iterator it = std::find(container.begin(), container.end(), m);
-	if ( it == container.end())
-		throw std::runtime_error("No ocurrence found");
-	return it;
+class Span {
+	public:
+			Span();
+			Span(const Span& other);
+			Span& operator=(const Span& other);
+			~Span();
+	
+	private:
+
 };
-
-
-
 
 #endif
