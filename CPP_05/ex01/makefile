@@ -1,4 +1,4 @@
-NAME = bureaucrat
+NAME = default_forms
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 

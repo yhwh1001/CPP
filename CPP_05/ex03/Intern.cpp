@@ -6,7 +6,7 @@
 /*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 15:06:44 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/28 16:04:13 by manelcarval      ###   ########.fr       */
+/*   Updated: 2026/02/10 17:53:29 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-Intern::Intern() {
-
-}
+Intern::Intern() {}
 
 Intern::Intern(const Intern& other) {
 	(void)other;
@@ -28,9 +26,7 @@ Intern& Intern::operator=(const Intern& other) {
 	return (*this);
 }
 
-Intern::~Intern() {
-
-}
+Intern::~Intern() {}
 
 AForm* Intern::makeForm(const std::string form_name, const std::string target) {
 	std::string forms[3] = {"shrubbery request", "robotomy request", "presidential pardon"};
@@ -51,8 +47,5 @@ AForm* Intern::makeForm(const std::string form_name, const std::string target) {
 		default:
 			std::cerr << "Form " << form_name << " not found, is it a ghost?" << std::endl;
 			return (NULL);
-		
-	}
-		
+	}		
 }
-
