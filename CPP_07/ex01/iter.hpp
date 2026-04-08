@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 14:49:15 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/02/11 15:25:26 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/08 10:39:24 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-void	iter(T* arr, size_t len, void (*func)(T const&)) {
+void	iter(T* arr, const size_t len, void (*func)(T const&)) {
 	for (size_t m = 0; m < len; m++) {
 		func(arr[m]);
 	}

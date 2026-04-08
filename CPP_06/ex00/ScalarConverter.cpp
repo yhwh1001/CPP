@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:45:33 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/02/05 13:16:48 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/08 11:57:39 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	printChar(const std::string &literal) {
 	char c;
 	
 	c = literal[0];
-	std::cout << "char: " << c <<std::endl;
+	std::cout << "char: " << c << std::endl;
 	std::cout << "int: " << static_cast<int>(c) <<std::endl;
 	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
 	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
@@ -40,6 +40,7 @@ void	printChar(const std::string &literal) {
 
 void	printInt(const std::string& literal) {
 	int value;
+	int m;
 
 	value = static_cast<int>(std::atoi(literal.c_str()));
 	if (std::isprint(value))
@@ -61,12 +62,12 @@ void	printFloat(const std::string &literal) {
 		std::cout << "char: Non displayable" << std::endl;
 	std::cout << "int: " << static_cast<int>(value) << std::endl;
 	if (value == static_cast<int>(value)) {
-		std::cout << "float: " << static_cast<float>(value) << ".0f" << std::endl;
-		std::cout << "double: " << value << ".0" << std::endl;
+		std::cout << "float: " << value << ".0f" << std::endl;
+		std::cout << "double: " << static_cast<double>(value) << ".0" << std::endl;
 	}
 	else {
-		std::cout << "float: " << static_cast<float>(value) << "f" << std::endl;
-		std::cout << "double: " << value << std::endl;
+		std::cout << "float: " << value << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(value) << std::endl;
 	}
 }
 
