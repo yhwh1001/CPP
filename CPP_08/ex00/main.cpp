@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 17:50:06 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/02/26 14:52:49 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/08 18:07:40 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int main() {
 	deq.push_front(27);
 	deq.push_front(37);
 	deq.push_front(42);
+	deq.push_back(3);
 	try {
 		std::deque<int>::iterator it = easyfind(deq, 323);	
 		std::cout << "Found ocurrence " << *it << " in position " << std::distance(deq.begin(), it) << std::endl;
@@ -59,6 +60,13 @@ int main() {
 	try {
 		std::deque<int>::iterator it = easyfind(deq, 37);	
 		std::cout << "Found ocurrence " << *it << " in position " << std::distance(deq.begin(), it) << std::endl;
+	}
+	catch (std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
+	try {
+		std::deque<int>::iterator it = easyfind(deq, 3);
+		std::cout << "Found occurence " << *it << " in position " << std::distance(deq.begin(), it) << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cerr << e.what() << std::endl;
