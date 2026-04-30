@@ -135,9 +135,8 @@ void BitcoinExchange::parseInput(std::string input) {
 			end_pos = line.find('\n');
 			value = line.substr(pos + 3, end_pos);
 			float result = 0;
-			if (checkDate(date) && checkValue(value, result)) {
-				std::cout << "Here" << std::endl;
-			}
+			if (checkDate(date) && checkValue(value, result))
+				std::cout << date << " => " << value << " = " << result << std::endl;
 
 
 		}
