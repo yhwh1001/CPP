@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:56:54 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/01/20 17:58:05 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/29 17:35:08 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	main() {
 	Bureaucrat zoe("Zoe", 144);
 	
 	std::cout << zoe.getName() 
-			  << ", a bureaucrat (crazy) with grade "
+			  << ", a bureaucrat with grade "
 			  << zoe.getGrade()
 			  << std::endl;
 	std::cout << bob.getName() 
-			  << ", a bureaucrat (crazy) with grade "
+			  << ", a bureaucrat with grade "
 			  << bob.getGrade()
 			  << std::endl;
 	separator("THE EXCEPTIONS");

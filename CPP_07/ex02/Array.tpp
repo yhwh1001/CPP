@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 16:54:24 by mcarvalh          #+#    #+#             */
-/*   Updated: 2026/02/11 17:52:31 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/30 14:04:14 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,23 @@ const T& Array<T>::operator[](int index) const {
 		throw std::exception();
 	return _arr[index];
 }
+
+/*
+	  std::exception          ← base class (what the subject says to throw)
+  ├── std::runtime_error
+  │   ├── std::overflow_error
+  │   └── std::range_error
+  ├── std::logic_error
+  │   ├── std::out_of_range
+  │   ├── std::invalid_argument
+  │   └── std::length_error
+  └── std::bad_alloc
+  └── std::bad_cast
+
+	Every class in that tree is a std::exception through inheritance.
+	So throwing std::out_of_range satisfies the subject's requirement of "an std::exception is thrown"
+	— because std::out_of_range inherits from std::exception.
+	*/
 
 template <typename T>
 unsigned int Array<T>::size() const {

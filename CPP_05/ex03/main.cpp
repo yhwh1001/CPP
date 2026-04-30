@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:56:54 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/02/23 10:20:37 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/09 13:16:47 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main() {
 	
 	separator("SHRUBBERY TESTS");
 	AForm*	shrubbery;
-	shrubbery = randomIntern.makeForm("shrubbery request", "Beeendeer");
+	shrubbery = randomIntern.makeForm("shrubbery request", "Bender");
 	std::cout << *shrubbery << std::endl;
 
 	try {

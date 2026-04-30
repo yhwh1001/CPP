@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcarvalh <mcarvalh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manelcarvalho <manelcarvalho@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:26:28 by manelcarval       #+#    #+#             */
-/*   Updated: 2026/02/23 10:16:11 by mcarvalh         ###   ########.fr       */
+/*   Updated: 2026/04/29 17:35:57 by manelcarval      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ void	Bureaucrat::Decrement() {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high... more water pls";
+	return "Grade is too high...";
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low... get them diamonds";
+	return "Grade is too low...";
 }
 
 const std::string	Bureaucrat::getName() const {
