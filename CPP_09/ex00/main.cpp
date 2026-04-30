@@ -24,5 +24,7 @@ int main (int argc, char** argv) {
 	}
 	BitcoinExchange btc;
 	btc.loadDatabase();
-	// btc.parseInput(argv[1]);
+	// std::cout << "Database is loaded\n";
+	btc.parseInput(input_file);
+	return 0;
 }

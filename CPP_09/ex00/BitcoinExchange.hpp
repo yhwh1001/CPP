@@ -17,6 +17,8 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include <cctype> //isdigit
+#include <cstdlib> //atof
 
 class BitcoinExchange {
 	public:
@@ -27,6 +29,7 @@ class BitcoinExchange {
 
 			void loadDatabase();
 			void parseInput(std::string input);
+			bool inputChecker(std::string line);
 	
 	private:
 			std::map<std::string, float>	_btc_data;
